@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Campground = require('./models/campground');
 const Comment = require('./models/comment');
 
-var data = [
+const data = [
   {
     name: "Salmon Creek",
     image: "https://farm9.staticflickr.com/8442/7962474612_bf2baf67c0.jpg",

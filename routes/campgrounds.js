@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-
 const Campground = require('../models/campground');
 const middleware = require('../middleware');
 
@@ -24,7 +23,7 @@ router.get("/new", middleware.isLoggedIn, (req, res) => {
 //CREATE
 router.post("/", middleware.isLoggedIn, (req, res) => {
     // get data from form and add to campgrounds array
-    const { name, image, description, price } = req.body;
+    const { name, image, description, price, address } = req.body;
     const author = {
       id: req.user._id,
       username: req.user.username
@@ -42,7 +41,6 @@ router.post("/", middleware.isLoggedIn, (req, res) => {
 
 })
 
-
 // SHOW
 router.get("/:id", (req, res) => {
   //find the campground with provided id
@@ -50,6 +48,7 @@ router.get("/:id", (req, res) => {
     if(err){
       console.log(err);
     } else {
+      console.log('from show:' + foundCamp)
       res.render("campgrounds/show", {campground:foundCamp});
     }
   })

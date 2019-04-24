@@ -43,6 +43,9 @@
                 <p>
                   <%= comment.text %>
                 </p>
+                <p>
+                  Rating: <%= comment.rating %>
+                </p>
                 <% if (currentUser && comment.author.id.equals(currentUser._id)) { %>
                 <a class="btn btn-warning btn-xs" href="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>/edit">Edit</a>
                 <form class="delete" action="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>?_method=delete" method="post">

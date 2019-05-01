@@ -37,11 +37,6 @@ router.post("/", middleware.isLoggedIn, (req, res) => {
           //connect new comment to camp
           foundCamp.comments.push(comment);
           console.log('from comment post:' + foundCamp)
-          // calculate average rating
-          // const ratingsList = foundCamp.comments.map(comment => comment.rating)
-          // const ratingSum = ratingsList.reduce((acc,val) => acc+val)
-          // const averageRating = (ratingSum / ratingsList.length).toFixed(1);
-          // foundCamp.rating = averageRating;
 
           foundCamp.save();
           //redirect to campground show page

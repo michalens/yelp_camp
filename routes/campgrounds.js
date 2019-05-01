@@ -48,7 +48,6 @@ router.get("/:id", (req, res) => {
     if(err){
       console.log(err);
     } else {
-      console.log('from show:' + foundCamp)
       res.render("campgrounds/show", {campground:foundCamp});
     }
   })

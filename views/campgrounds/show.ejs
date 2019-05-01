@@ -17,6 +17,12 @@
           <h4 class="pull-right">$<%= campground.price %>/night</h4>
           <h4><a href="#"><%= campground.name %></a></h4>
           <p><%= campground.description %></p>
+
+          <% if (campground.averageRating) { %>
+            <p>Average Rating: <strong><%= campground.averageRating.toFixed(1) %></strong></p>
+          <% } %>
+          
+          
           <p>
             <em>Submitted by: <%= campground.author.username %></em>
           </p>
